@@ -31,6 +31,7 @@
                  linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
       border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)
     }
+    .kicker{color:var(--muted);text-transform:uppercase;letter-spacing:.12em;font-size:12px;margin-bottom:10px}
     h2.title{font-size:36px;line-height:1.15;margin:0 0 10px}
     p.lead{color:#DCE3FF;font-size:16px;margin:0 0 18px}
     .cta{display:flex;flex-wrap:wrap;gap:12px}
@@ -65,9 +66,9 @@
   <div class="wrap topbar">
     <div class="brand">
       <div class="logo"></div>
-      <h1>Договор аренды квартиры</h1>
+      <h1>Подписание договора аренды</h1>
     </div>
-    <nav class="langs">
+    <nav class="langs" aria-label="Language switcher">
       <button class="lang-btn active" data-lang="ru">RU</button>
       <button class="lang-btn" data-lang="kz">KZ</button>
     </nav>
@@ -82,35 +83,24 @@
       <div class="cta">
         <a class="btn btn-primary" href="https://wa.me/77081940179" target="_blank" rel="noopener">💬 Написать в WhatsApp</a>
         <a class="btn btn-outline" href="tel:+77081940179">📞 Позвонить: +7 708 194 0179</a>
-        <a class="btn btn-outline" href="mailto:Marjan69@mail.ru">✉️ Email</a>
+        <a class="btn btn-outline" href="mailto:Marjan69@mail.ru">✉️ Написать на email</a>
       </div>
       <div class="mini">Ответ обычно в течение часа (09:00–20:00, GMT+6)</div>
     </div>
+
     <div class="hero-media">
       <img src="images/hero.jpg" alt="Подписание договора аренды квартиры" loading="lazy">
     </div>
   </section>
 
-  <!-- Остальные ваши секции вставляются сюда без изменений -->
+  <!-- Остальной контент оставить без изменений -->
+
 </main>
 
 <footer>
   <div class="wrap">
-    © 2025. Подготовка договора аренды квартиры. Казахстан.
+    <div>© 2025. Подготовка договора аренды квартиры. Казахстан.</div>
   </div>
 </footer>
-
-<script>
-  const buttons = document.querySelectorAll('.lang-btn');
-  function applyLang(lang){
-    document.querySelectorAll('[data-ru]').forEach(el=>{
-      el.textContent = el.getAttribute(lang==='ru'?'data-ru':'data-kz');
-    });
-    buttons.forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
-    document.documentElement.lang = (lang==='ru'?'ru':'kk');
-  }
-  buttons.forEach(b=>b.addEventListener('click',()=>applyLang(b.dataset.lang)));
-  applyLang('ru');
-</script>
 </body>
 </html>
