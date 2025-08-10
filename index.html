@@ -260,46 +260,6 @@
   buttons.forEach(b=>b.addEventListener('click',()=>applyLang(b.dataset.lang)));
   applyLang('ru');
 </script>
-<script>
-function updateContacts(waText, mailSub, mailBody, labels){
-  const waHref   = 'https://wa.me/77081940179?text=' + encodeURIComponent(waText);
-  const mailHref = 'mailto:Marjan69@mail.ru'
-                 + '?subject=' + encodeURIComponent(mailSub)
-                 + '&body='    + encodeURIComponent(mailBody);
-
-  document.querySelectorAll('a[data-action="wa"]').forEach(a=>{
-    a.href = waHref; a.textContent = labels.wa; a.target = '_blank'; a.rel='noopener';
-  });
-  document.querySelectorAll('a[data-action="tel"]').forEach(a=>{
-    a.href = 'tel:+77081940179'; a.textContent = labels.tel;
-  });
-  document.querySelectorAll('a[data-action="mail"]').forEach(a=>{
-    a.href = mailHref; a.textContent = labels.mail;
-  });
-}
-
-// Русский по умолчанию
-function setRU(){
-  updateContacts(
-    'Здравствуйте! Хочу подготовить договор аренды квартиры. Напишите, пожалуйста.',
-    'Договор аренды квартиры — консультация',
-    'Здравствуйте! Хочу подготовить договор аренды квартиры. Опишите, пожалуйста, условия и стоимость.',
-    { wa:'💬 Написать в WhatsApp', tel:'📞 Позвонить: +7 708 194 0179', mail:'✉️ Написать на email' }
-  );
-}
-
-// Казахский
-function setKZ(){
-  updateContacts(
-    'Сәлеметсіз бе! Пәтерді жалға беру шарты керек. Жазып жіберіңізші.',
-    'Пәтерді жалға беру шарты — кеңес',
-    'Сәлеметсіз бе! Пәтерді жалға беру шарты керек. Жағдайымды жазып жіберейін.',
-    { wa:'💬 WhatsApp-қа жазу', tel:'📞 Қоңырау шалу: +7 708 194 0179', mail:'✉️ Email жазу' }
-  );
-}
-
-document.addEventListener('DOMContentLoaded', setRU); // старт: русский
-// В вашем переключателе языка вызовите setRU() или setKZ()
 </script>
 </body>
 </html>
