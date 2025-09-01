@@ -63,7 +63,8 @@ img{max-width:100%; display:block}
   .hero__content h1{font-size:32px}
 
   .big-banner{grid-template-columns:1fr}
-  .banner-image{order:2}
+.big-banner .banner-image{order:2}  /* чтобы не трогать .banner */
+.banner{grid-template-columns:1fr}  /* стек на мобилке для третьего */
   .banner-content h2{font-size:32px}
 }
 .banner {
@@ -81,10 +82,10 @@ img{max-width:100%; display:block}
 }
 
 .banner-text {
-  text-align: center;
+  text-align: left;   /* убираем центр */
   color: white;
-  max-width: 800px;
   padding: 20px;
+  max-width: none;    /* убираем ограничение 800px */
 }
 
 .banner-text h2 {
