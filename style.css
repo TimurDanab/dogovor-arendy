@@ -66,3 +66,29 @@ img{max-width:100%; display:block}
   .banner-image{order:2}
   .banner-content h2{font-size:32px}
 }
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1f2c; /* фон под стиль сайта */
+  border-radius: 12px;
+  height: 400px;             /* такая же высота, как у фото */
+  margin: 20px 0;
+}
+
+.banner-text {
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.banner-text h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.banner-text p {
+  font-size: 18px;
+  line-height: 1.5;
+}
