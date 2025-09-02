@@ -128,3 +128,28 @@ img{max-width:100%; display:block}
     height: 280px;
   }
 }
+/* === ФОРСИРУЕМ ВЫРАВНИВАНИЕ ТРЕТЬЕГО БАННЕРА === */
+section.banner{
+  display: grid !important;
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr) !important;
+  gap: 40px !important;
+  align-items: center !important;
+  max-width: 1200px !important;
+  margin: 60px auto !important;
+  padding: 0 16px !important;
+}
+.banner-text{ margin: 0 !important; }
+.banner-image{ margin: 0 !important; }
+.banner-image img{
+  display: block !important;
+  width: 100% !important;
+  height: 400px !important;
+  object-fit: cover !important;
+  border-radius: 16px !important;
+}
+
+/* Мобилка */
+@media (max-width: 900px){
+  section.banner{ grid-template-columns: 1fr !important; }
+  .banner-image img{ height: 280px !important; }
+}
