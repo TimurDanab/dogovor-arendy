@@ -1,78 +1,45 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <title>Полезные статьи об аренде квартир</title>
-  <link rel="stylesheet" href="../style.css">
-  <style>
-    body {
-      color: #f0f0f0; /* светлый текст */
-    }
-    a {
-      color: #00c3ff; /* ярко-голубые ссылки */
-      text-decoration: none;
-      font-weight: bold;
-    }
-    a:hover {
-      color: #ffcc00; /* жёлтый при наведении */
-      text-decoration: underline;
-    }
-    .card {
-      background: #222; 
-      border-radius: 12px;
-      padding: 20px;
-      margin: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-      transition: transform 0.2s ease;
-    }
-    .card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 20px rgba(255,255,255,0.3);
-    }
-    .card h3 {
-      color: #ffffff;
-    }
-    .card p {
-      color: #dcdcdc;
-    }
-    .grid {
-      display: grid;
-      gap: 20px;
-    }
-    .three {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>📚 Полезные статьи об аренде квартир</h1>
-  </header>
+/* Статьи */
+.grid {
+  display: grid;
+  gap: 20px;
+}
+.three {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin: 10px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+}
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-md);
+}
+.card h3 {
+  margin-top: 0;
+  color: var(--text);
+}
+.card p {
+  color: var(--text-2);
+}
 
-  <main>
-    <section class="grid three">
-      <a class="card" href="kak-sdat-kvartiru.html">
-        <h3>Как правильно сдать квартиру</h3>
-        <p>Основные шаги для арендодателей: подготовка, договор, проверка арендатора.</p>
-      </a>
-
-      <a class="card" href="nalogi-pri-arende.html">
-        <h3>Налоги при аренде квартиры</h3>
-        <p>Какие налоги платит арендодатель и как правильно оформить платежи.</p>
-      </a>
-
-      <a class="card" href="oshibki-pri-arende.html">
-        <h3>Ошибки, которых стоит избегать</h3>
-        <p>Типичные промахи при сдаче квартиры и как их избежать.</p>
-      </a>
-    </section>
-  </main>
-<div style="margin: 20px 0; text-align: center;">
-  <a href="https://timurdanab.github.io/dogovor-arendy/" 
-     style="display: inline-block; padding: 10px 20px; background-color: #333; 
-            color: #fff; text-decoration: none; border-radius: 5px;">
-    ← На главную
-  </a>
-</div>
-</body>
-</html>
+/* Кнопка "Назад на главную" */
+.back-home {
+  margin: 20px 0;
+  text-align: center;
+}
+.btn-home {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+}
+.btn-home:hover {
+  background-color: var(--primary-2);
+}
