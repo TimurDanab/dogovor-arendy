@@ -4,6 +4,45 @@
   <meta charset="UTF-8">
   <title>Полезные статьи об аренде квартир</title>
   <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      color: #f0f0f0; /* светлый текст */
+    }
+    a {
+      color: #00c3ff; /* ярко-голубые ссылки */
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      color: #ffcc00; /* жёлтый при наведении */
+      text-decoration: underline;
+    }
+    .card {
+      background: #222; 
+      border-radius: 12px;
+      padding: 20px;
+      margin: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      transition: transform 0.2s ease;
+    }
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 20px rgba(255,255,255,0.3);
+    }
+    .card h3 {
+      color: #ffffff;
+    }
+    .card p {
+      color: #dcdcdc;
+    }
+    .grid {
+      display: grid;
+      gap: 20px;
+    }
+    .three {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+  </style>
 </head>
 <body>
   <header>
