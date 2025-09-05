@@ -1,55 +1,19 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <title>Статьи об аренде</title>
-  <link rel="stylesheet" href="../style.css" />
-  <style>
-    .container { max-width: 1100px; margin: 0 auto; padding: 24px 16px 72px; }
-    h1 { margin: 0 0 24px; }
-    .grid { display: grid; gap: 20px; }
-    .three { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-    .card {
-      display: block; background: var(--surface, #fff); border-radius: 12px;
-      padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-      transition: transform .2s, box-shadow .2s; text-decoration: none; color: inherit;
-    }
-    .card:hover { transform: scale(1.03); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
-    .card h3 { margin: 0 0 8px; color: #111; }
-    .card p { margin: 0; color: #555; }
-    .back-home { margin: 28px 0 0; text-align: center; }
-    .btn-home {
-      display: inline-block; padding: 10px 20px; border-radius: 8px;
-      background: #2f6fed; color: #fff; text-decoration: none;
-      transition: background .2s, transform .2s;
-    }
-    .btn-home:hover { background: #1f57c7; transform: translateY(-1px); }
-    @media (max-width: 480px) {
-      .container { padding: 16px 12px 56px; }
-      .three { grid-template-columns: 1fr; }
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Статьи об аренде</h1>
-    <div class="grid three">
-      <a href="kak-sdat-kvartiru.html" class="card">
-        <h3>Как правильно сдать квартиру</h3>
-        <p>Основные шаги и советы для арендодателей.</p>
-      </a>
-      <a href="nalogi-pri-arende.html" class="card">
-        <h3>Налоги при аренде квартиры</h3>
-        <p>Что нужно знать об обязательных выплатах.</p>
-      </a>
-      <a href="oshibki-arendatorov.html" class="card">
-        <h3>Ошибки арендаторов и арендодателей</h3>
-        <p>Чего стоит избегать при сдаче и аренде жилья.</p>
-      </a>
-    </div>
-    <div class="back-home">
-      <a class="btn-home" href="../index.html">Назад на главную</a>
-    </div>
+<h1>Статьи об аренде</h1>
+
+<div class="articles">
+  <div class="article">
+    <a href="kak-sdat-kvartiru.html">
+      <h2>Как правильно сдать квартиру</h2>
+      <p>Основные шаги и советы для арендодателей.</p>
+    </a>
   </div>
-</body>
-</html>
+
+  <div class="article">
+    <a href="oshibki-arendodateley.html">
+      <h2>Ошибки арендодателей</h2>
+      <p>Чего стоит избегать при аренде квартир.</p>
+    </a>
+  </div>
+</div>
+
+<p><a href="../index.html" class="btn">Назад на главную</a></p>
