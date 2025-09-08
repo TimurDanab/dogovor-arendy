@@ -1,78 +1,53 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <title>Ошибки арендодателей: чего стоит избегать при аренде квартир</title>
-  <meta name="description" content="Ошибки арендодателей при аренде квартир. Чего стоит избегать, чтобы не потерять деньги и избежать конфликтов.">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Подключаем ваш style.css (тот, что вы прислали) -->
-  <link rel="stylesheet" href="../style.css">
-</head>
-<body>
+/* style.css — версия с «живым» фоном (градиенты + тонкая SVG-сеточка) */
+:root{
+  --grid-size: 36px;
+  --spot-alpha-1: 0.35;
+  --spot-alpha-2: 0.35;
+  --spot-alpha-3: 0.30;
+}
 
-  <main class="container">
-    <!-- Герой-блок с фото и заголовком -->
-    <section class="hero">
-      <div class="hero__content">
-        <h1>Ошибки арендодателей: чего стоит избегать при аренде квартир</h1>
-        <p>Аренда квартир остаётся одним из самых распространённых способов решения жилищного вопроса. Но арендодатели часто совершают ошибки, которые приводят к убыткам, конфликтам и даже судебным разбирательствам. Ниже — частые промахи и как их избежать.</p>
-        <div class="cta-vertical">
-          <a class="btn btn-outline" href="../index.html">← Назад на главную</a>
-        </div>
-      </div>
-      <div class="hero__media">
-        <!-- Убедитесь, что файл реально лежит в /images/ под именем slide3.png -->
-        <img src="../images/slide3.png" alt="Сделка по аренде квартиры">
-      </div>
-    </section>
+html, body { height: 100%; }
 
-    <!-- Основной текст статьи -->
-    <section class="banner" style="margin-top:28px;">
-      <div class="banner-text">
-        <h2>Наиболее типичные ошибки арендодателей</h2>
+body{
+  margin: 0;
+  color: #0f172a;
+  background-image:
+    radial-gradient(60% 80% at 10% 10%, rgba(255,200,150,var(--spot-alpha-1)), transparent 60%),
+    radial-gradient(50% 70% at 90% 20%, rgba(120,200,255,var(--spot-alpha-2)), transparent 60%),
+    radial-gradient(70% 60% at 20% 90%, rgba(150,255,200,var(--spot-alpha-3)), transparent 60%),
+    linear-gradient(180deg, #ffffff, #f8fafc 40%, #ffffff 80%);
+  background-size: 160% 160%, 140% 140%, 180% 160%, 100% 100%;
+  background-position: 0% 0%, 100% 0%, 0% 100%, center;
+  background-attachment: fixed, fixed, fixed, fixed;
 
-        <h3>1. Сдача квартиры без договора аренды</h3>
-        <p>Устные договорённости не защищают арендодателя. Любой спор — и доказать условия почти невозможно.</p>
+  animation: driftA 28s linear infinite alternate,
+             driftB 36s linear infinite alternate-reverse,
+             driftC 44s linear infinite;
 
-        <h3>2. Использование плохо проработанной формы договора</h3>
-        <p>Необязательно становиться юристом. Обратитесь к проекту
-          <a href="https://timurdanab.github.io/dogovor-arendy/" target="_blank" rel="noopener">Партнёр-Аренда</a>,
-          чтобы быстро и недорого получить договор, подготовленный специалистами с учётом ваших условий.
-        </p>
+  position: relative;
+  isolation: isolate;
+}
 
-        <h3>3. Отсутствие проверки арендатора</h3>
-        <p>Проверяйте личность и платёжеспособность. Запросите копии документов, сведения о месте работы, контакты для экстренной связи.</p>
+/* Тонкая SVG-сеточка поверх (с мягким затуханием к краям) */
+body::before{
+  content: "";
+  position: fixed; inset: 0; pointer-events: none;
+  z-index: -1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'><path d='M36 0H0V36' fill='none' stroke='black' stroke-opacity='0.08' stroke-width='1'/></svg>");
+  background-size: var(--grid-size) var(--grid-size);
+  -webkit-mask-image: radial-gradient(60% 60% at 50% 50%, #000 60%, transparent 100%);
+          mask-image: radial-gradient(60% 60% at 50% 50%, #000 60%, transparent 100%);
+}
 
-        <h3>4. Игнорирование акта приёма-передачи</h3>
-        <p>Акт фиксирует состояние квартиры, мебели и техники. При передаче используйте фото- и видеосъёмку.</p>
+/* Анимации дрейфа */
+@keyframes driftA{ to{ background-position:100% 60%,100% 0%,0% 100%,center; } }
+@keyframes driftB{ to{ background-position:0% 0%,0% 100%,0% 100%,center; } }
+@keyframes driftC{ to{ background-position:0% 0%,100% 0%,100% 0%,center; } }
 
-        <h3>5. Завышенные ожидания по цене</h3>
-        <p>Ставка, не соответствующая рынку и состоянию квартиры, ведёт к простоям или частой смене арендаторов.</p>
+/* Уважение к настройкам пользователя */
+@media (prefers-reduced-motion: reduce){
+  body{ animation: none; }
+}
 
-        <h3>6. Уклонение от периодических проверок</h3>
-        <p>Регулярно осматривайте квартиру, поддерживайте контакт с соседями — это снижает риски порчи имущества и конфликтов.</p>
-
-        <h2 style="margin-top:28px;">Как избежать проблем</h2>
-        <ul>
-          <li>Заключайте письменный договор аренды квартиры.</li>
-          <li>Используйте проверенную форму договора, подготовленную юристами
-            (<a href="https://timurdanab.github.io/dogovor-arendy/" target="_blank" rel="noopener">Партнёр-Аренда</a>).
-          </li>
-          <li>По договорённости сторон расходы на подготовку договора можно возложить частично или полностью на арендатора.</li>
-          <li>Всегда делайте акт приёма-передачи, дополняйте фото/видео фиксацией.</li>
-          <li>Проводите периодические проверки состояния квартиры и оборудования.</li>
-          <li>Стройте честные отношения: своевременные платежи и ответственное отношение выгодны обеим сторонам.</li>
-        </ul>
-
-        <p style="margin-top:18px;">
-          <a class="btn btn-outline" href="../index.html">← Назад на главную</a>
-        </p>
-      </div>
-      <div class="banner-image" aria-hidden="true">
-        <img src="../images/slide3.png" alt="">
-      </div>
-    </section>
-  </main>
-
-</body>
-</html>
+/* Чтобы фон был виден, секции без сплошной подложки */
+.container, .hero, .banner{ background: transparent; }
