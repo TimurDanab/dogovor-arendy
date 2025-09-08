@@ -153,6 +153,33 @@ html
 <body class="light-article">
   <!-- остальное содержимое -->
 </body>
+<style id="theme-hotfix">
+  :root { color-scheme: dark; }
+
+  /* По умолчанию — тёмное оформление */
+  body:not(.light-article) {
+    background: #0b0f12 !important;
+    color: #e9edf3 !important;
+  }
+
+  /* На страницах-статьях — белый фон и тёмный текст */
+  body.light-article {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+
+  /* Ссылки */
+  body.light-article a {
+    color: #1d4ed8 !important;
+  }
+
+  /* Заголовки в статьях */
+  body.light-article h1, body.light-article h2,
+  body.light-article h3, body.light-article h4,
+  body.light-article h5, body.light-article h6 {
+    color: #0f172a !important;
+  }
+</style>
 </head>
 <body>
 <header>
