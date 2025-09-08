@@ -1,69 +1,198 @@
-/* style.css — версия с «живым» тёмным фоном (градиенты + тонкая SVG-сеточка) */
-:root{
-  --grid-size: 36px;
-  --spot-alpha-1: 0.35;
-  --spot-alpha-2: 0.35;
-  --spot-alpha-3: 0.30;
-}
-
-html, body { height: 100%; }
-
-body{
+/* ================================
+   Общие стили
+================================ */
+html, body {
+  height: 100%;
   margin: 0;
-  color: #e9edf3; /* светлый текст */
-  background-image:
-    radial-gradient(60% 80% at 10% 10%, rgba(255,200,150,var(--spot-alpha-1)), transparent 60%),
-    radial-gradient(50% 70% at 90% 20%, rgba(120,200,255,var(--spot-alpha-2)), transparent 60%),
-    radial-gradient(70% 60% at 20% 90%, rgba(150,255,200,var(--spot-alpha-3)), transparent 60%),
-    linear-gradient(180deg, #0b0f12, #12151b 40%, #0b0f12 80%); /* тёмный градиент */
-  background-size: 160% 160%, 140% 140%, 180% 160%, 100% 100%;
-  background-position: 0% 0%, 100% 0%, 0% 100%, center;
-  background-attachment: fixed, fixed, fixed, fixed;
-
-  animation: driftA 28s linear infinite alternate,
-             driftB 36s linear infinite alternate-reverse,
-             driftC 44s linear infinite;
-
-  position: relative;
-  isolation: isolate;
+  padding: 0;
+  background-color: #1a1a1a; /* тёмный фон */
+  color: #e9edf3;           /* светлый текст */
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
 }
 
-/* Тонкая SVG-сеточка поверх (с мягким затуханием к краям) */
-body::before{
-  content: "";
-  position: fixed; inset: 0; pointer-events: none;
-  z-index: -1;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'><path d='M36 0H0V36' fill='none' stroke='white' stroke-opacity='0.08' stroke-width='1'/></svg>");
-  background-size: var(--grid-size) var(--grid-size);
-  -webkit-mask-image: radial-gradient(60% 60% at 50% 50%, #000 60%, transparent 100%);
-          mask-image: radial-gradient(60% 60% at 50% 50%, #000 60%, transparent 100%);
+/* Сброс ссылок, кнопок */
+a, button {
+  transition: all 0.25s ease-in-out;
 }
 
-/* Анимации дрейфа */
-@keyframes driftA{ to{ background-position:100% 60%,100% 0%,0% 100%,center; } }
-@keyframes driftB{ to{ background-position:0% 0%,0% 100%,0% 100%,center; } }
-@keyframes driftC{ to{ background-position:0% 0%,100% 0%,100% 0%,center; } }
-
-/* Уважение к настройкам пользователя */
-@media (prefers-reduced-motion: reduce){
-  body{ animation: none; }
+/* ================================
+   Шапка и навигация
+================================ */
+header {
+  background-color: #111;
+  color: #fff;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #222;
 }
 
-/* Чтобы фон был виден, секции без сплошной подложки */
-.container, .hero, .banner{ background: transparent; }
+header .logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
 
-/* Текстовые элементы */
-h1, h2, h3, h4, h5, h6{ color: #ffffff; }
-p, li, small, span{ color: #e9edf3; }
-strong, b{ color: #ffffff; }
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
 
-/* Ссылки */
-a{ color: #8ab4ff; text-decoration: none; }
-a:hover{ opacity: .92; }
+nav ul li a {
+  color: #e9edf3;
+  text-decoration: none;
+  font-weight: 500;
+}
 
-/* Кнопки */
-button, .btn{
-  background:#1f2937;
-  color:#ffffff;
-  border:1px solid #374151;
+nav ul li a:hover {
+  color: #8ab4ff;
+}
+
+/* ================================
+   Герой-секция
+================================ */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: transparent;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+.hero .btn-primary {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.hero .btn-primary:hover {
+  background: #1e40af;
+}
+
+/* ================================
+   Карточки (услуги, блоки)
+================================ */
+.card {
+  background: #222;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 20px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.5);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #fff;
+}
+
+.card p {
+  color: #ccc;
+}
+
+/* ================================
+   Кнопки
+================================ */
+button, .btn {
+  background: #2a2a2a;
+  color: #ffffff;
+  border: 1px solid #444;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+button:hover, .btn:hover {
+  background: #333333;
+  border-color: #666;
+}
+
+.btn-accent {
+  background: #8ab4ff;
+  color: #111;
+  border: none;
+}
+.btn-accent:hover {
+  background: #5f8fff;
+  color: #fff;
+}
+
+/* ================================
+   Секции и контейнеры
+================================ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.section {
+  margin: 60px 0;
+}
+
+/* ================================
+   Футер
+================================ */
+footer {
+  background: #111;
+  color: #aaa;
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #222;
+}
+
+footer a {
+  color: #8ab4ff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #fff;
+}
+
+/* ================================
+   Адаптивность
+================================ */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .container {
+    padding: 20px;
+  }
 }
