@@ -1,4 +1,4 @@
-/* style.css — версия с «живым» фоном (градиенты + тонкая SVG-сеточка) */
+/* style.css — версия с «живым» тёмным фоном (градиенты + тонкая SVG-сеточка) */
 :root{
   --grid-size: 36px;
   --spot-alpha-1: 0.35;
@@ -10,12 +10,12 @@ html, body { height: 100%; }
 
 body{
   margin: 0;
-  color: #0f172a;
+  color: #e9edf3; /* светлый текст */
   background-image:
     radial-gradient(60% 80% at 10% 10%, rgba(255,200,150,var(--spot-alpha-1)), transparent 60%),
     radial-gradient(50% 70% at 90% 20%, rgba(120,200,255,var(--spot-alpha-2)), transparent 60%),
     radial-gradient(70% 60% at 20% 90%, rgba(150,255,200,var(--spot-alpha-3)), transparent 60%),
-    linear-gradient(180deg, #ffffff, #f8fafc 40%, #ffffff 80%);
+    linear-gradient(180deg, #0b0f12, #12151b 40%, #0b0f12 80%); /* тёмный градиент */
   background-size: 160% 160%, 140% 140%, 180% 160%, 100% 100%;
   background-position: 0% 0%, 100% 0%, 0% 100%, center;
   background-attachment: fixed, fixed, fixed, fixed;
@@ -33,7 +33,7 @@ body::before{
   content: "";
   position: fixed; inset: 0; pointer-events: none;
   z-index: -1;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'><path d='M36 0H0V36' fill='none' stroke='black' stroke-opacity='0.08' stroke-width='1'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'><path d='M36 0H0V36' fill='none' stroke='white' stroke-opacity='0.08' stroke-width='1'/></svg>");
   background-size: var(--grid-size) var(--grid-size);
   -webkit-mask-image: radial-gradient(60% 60% at 50% 50%, #000 60%, transparent 100%);
           mask-image: radial-gradient(60% 60% at 50% 50%, #000 60%, transparent 100%);
@@ -51,3 +51,19 @@ body::before{
 
 /* Чтобы фон был виден, секции без сплошной подложки */
 .container, .hero, .banner{ background: transparent; }
+
+/* Текстовые элементы */
+h1, h2, h3, h4, h5, h6{ color: #ffffff; }
+p, li, small, span{ color: #e9edf3; }
+strong, b{ color: #ffffff; }
+
+/* Ссылки */
+a{ color: #8ab4ff; text-decoration: none; }
+a:hover{ opacity: .92; }
+
+/* Кнопки */
+button, .btn{
+  background:#1f2937;
+  color:#ffffff;
+  border:1px solid #374151;
+}
