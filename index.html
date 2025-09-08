@@ -82,6 +82,77 @@
     border:1px solid #2a2f3a !important;
   }
 </style> 
+<style id="theme-hotfix">
+  :root { color-scheme: dark; }
+
+  /* Тёмный фон и светлый текст — только для элементов вне статей */
+  body:not(.light-article) {
+    background: #0b0f12 !important;
+    color: #e9edf3 !important;
+  }
+
+  /* Статьи — белый фон и тёмный текст */
+  body.light-article {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+
+  /* Заголовки */
+  body:not(.light-article) h1, body:not(.light-article) h2,
+  body:not(.light-article) h3, body:not(.light-article) h4,
+  body:not(.light-article) h5, body:not(.light-article) h6 {
+    color: #ffffff !important;
+  }
+  body.light-article h1, body.light-article h2,
+  body.light-article h3, body.light-article h4,
+  body.light-article h5, body.light-article h6 {
+    color: #0f172a !important;
+  }
+
+  /* Ссылки */
+  body:not(.light-article) a {
+    color: #8ab4ff !important;
+  }
+  body.light-article a {
+    color: #1d4ed8 !important;
+  }
+  body:not(.light-article) a:hover, body.light-article a:hover {
+    opacity: .92 !important;
+  }
+
+  /* Кнопки */
+  body:not(.light-article) button, body:not(.light-article) .btn {
+    background: #1f2937 !important;
+    color: #fff !important;
+    border: 1px solid #374151 !important;
+  }
+  body.light-article button, body.light-article .btn {
+    background: #edf2f7 !important;
+    color: #0f172a !important;
+    border: 1px solid #cbd5e0 !important;
+  }
+
+  /* Формы */
+  body:not(.light-article) input, body:not(.light-article) textarea,
+  body:not(.light-article) select {
+    background: #0f131a !important;
+    color: #e5e7eb !important;
+    border: 1px solid #2a2f3a !important;
+  }
+  body.light-article input, body.light-article textarea, body.light-article select {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border: 1px solid #cbd5e0 !important;
+  }
+</style>
+2. Добавьте класс light-article в страницы статей
+Для каждой статьи, например articles/oshibki-arendodateley.html, в корневом {% layout %} или в самом файле html, в теге <body>, добавьте class="light-article":
+
+html
+Копировать код
+<body class="light-article">
+  <!-- остальное содержимое -->
+</body>
 </head>
 <body>
 <header>
