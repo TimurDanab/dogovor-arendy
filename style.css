@@ -1,104 +1,110 @@
-/* Общие стили */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #0b1221;
-    color: white;
+/* ===== Глобальные переменные: один раз задали — совпадают все края ===== */
+:root{
+  --page-max: 1200px;   /* ширина контента и шапки (подгоните при нужде) */
+  --page-pad: 16px;     /* внутренние поля слева/справа у шапки и контента */
+  --bg: #0b1221;
+  --panel: #12213a;
+  --muted: #1a243b;
+  --accent: #0057ff;
+  --text: #ffffff;
 }
 
-/* Шапка */
-header {
-    max-width: 1200px; /* ширина равна ширине блоков с баннерами */
-    margin: 0 auto;    /* центрируем */
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
 }
 
-/* Заголовок слева */
-.site-title {
-    font-size: 18px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    margin: 0;
-    padding: 0;
+/* ===== Единые края для шапки и контента ===== */
+.header-wrap,
+.container{
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 0 var(--page-pad);
 }
 
-.site-title img {
-    margin-right: 8px;
-    width: 20px;
-    height: 20px;
+/* ===== Шапка: выровнена строго по краям контента ===== */
+header{
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 10px var(--page-pad);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
 }
 
-/* Кнопки справа */
-.header-buttons {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.site-title{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:18px;
+  font-weight:700;
+  margin:0;
+  white-space:nowrap;
+}
+.site-title img{ width:20px; height:20px; flex:0 0 20px; }
+
+.header-buttons{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;       /* если мало ширины — кнопки переносятся, но края не уезжают */
+  margin-left:auto;
+}
+.header-buttons a,
+.header-buttons button{
+  background: var(--muted);
+  color:#fff;
+  border:none;
+  text-decoration:none;
+  padding:8px 14px;
+  border-radius:8px;
+  font-size:14px;
+  line-height:1;
+  cursor:pointer;
+}
+.header-buttons .call-btn{
+  background: var(--accent);
+  font-weight:700;
 }
 
-.header-buttons button,
-.header-buttons a {
-    background: #1a243b;
-    border: none;
-    color: white;
-    padding: 8px 14px;
-    border-radius: 6px;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 14px;
+/* ===== Контент: 2 колонки, баннер слева — фото справа ===== */
+.container{
+  margin: 20px auto;
+  display:grid;
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+  gap:20px;
+  grid-auto-flow: row dense; /* умно «спаривает» блок текста с соответствующим фото */
 }
 
-.header-buttons .call-btn {
-    background-color: #0057ff;
-    color: #fff;
-    font-weight: bold;
+/* Карточки-баннеры */
+.banner{
+  background: var(--panel);
+  padding:20px;
+  border-radius:12px;
+}
+.banner h2{ margin:0 0 10px; }
+.banner ul{ margin:0; padding-left:20px; }
+
+/* Изображения (как отдельные карточки или внутри баннера) */
+.card-image,
+.banner img{
+  width:100%;
+  height:auto;
+  border-radius:12px;
+  display:block;
 }
 
-/* Блоки баннеров и фото */
-.container {
-    max-width: 1200px;
-    margin: 20px auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
+/* ===== Мобильная логика: баннер над своим фото, края те же ===== */
+@media (max-width: 768px){
+  header{ padding: 10px var(--page-pad); gap:10px; }
+  .container{ grid-template-columns: 1fr; }
 
-.banner {
-    background: #12213a;
-    padding: 20px;
-    border-radius: 12px;
-}
-
-.banner h2 {
-    margin-top: 0;
-}
-
-.banner ul {
-    padding-left: 20px;
-}
-
-/* Картинки */
-.banner img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-}
-
-/* Мобильная адаптация */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .header-buttons {
-        margin-top: 10px;
-    }
-
-    .container {
-        grid-template-columns: 1fr;
-    }
+  /* Если фото где-то выползает выше текста — принудительно ниже */
+  .card-image{ order: 2; }
+  .banner{ order: 1; }
 }
