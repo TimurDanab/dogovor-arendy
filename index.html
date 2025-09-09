@@ -36,33 +36,39 @@
     <section class="banners">
       <!-- Баннер 1 -->
       <article class="card accent">
-        <h2 data-i18n="b1_title">Подготовка договора аренды квартиры</h2>
-        <p data-i18n="b1_text">
-          Готовим договоры для собственников арендных квартир: быстро, понятно и по закону Казахстана. Документ в .docx + комментарии.
-        </p>
-        <ul class="ticks">
-          <li data-i18n="b1_li1">Проверка данных сторон и объекта</li>
-          <li data-i18n="b1_li2">Условия оплаты, залога и ответственности</li>
-          <li data-i18n="b1_li3">Права, обязанности, досрочное расторжение</li>
-        </ul>
+        <div class="card-inner">
+          <h2 data-i18n="b1_title">Подготовка договора аренды квартиры</h2>
+          <p data-i18n="b1_text">
+            Готовим договоры для собственников арендных квартир: быстро, понятно и по закону Казахстана. Документ в .docx + комментарии.
+          </p>
+          <ul class="ticks">
+            <li data-i18n="b1_li1">Проверка данных сторон и объекта</li>
+            <li data-i18n="b1_li2">Условия оплаты, залога и ответственности</li>
+            <li data-i18n="b1_li3">Права, обязанности, досрочное расторжение</li>
+          </ul>
+        </div>
         <a class="btn large" id="cta1" href="#contact" data-i18n="get_consult">Получить консультацию</a>
       </article>
 
       <!-- Баннер 2 -->
       <article class="card">
-        <h2 data-i18n="b2_title">Беспроцентные займы для постоянных клиентов</h2>
-        <p data-i18n="b2_text">
-          Срок до 30 дней. Сумма от 50 000 до 100 000 ₸. Доступно нашим постоянным клиентам по правилам сервиса.
-        </p>
+        <div class="card-inner">
+          <h2 data-i18n="b2_title">Беспроцентные займы для постоянных клиентов</h2>
+          <p data-i18n="b2_text">
+            Срок до 30 дней. Сумма от 50 000 до 100 000 ₸. Доступно нашим постоянным клиентам по правилам сервиса.
+          </p>
+        </div>
         <a class="btn" id="cta2" href="#contact" data-i18n="details">Узнать условия</a>
       </article>
 
       <!-- Баннер 3 -->
       <article class="card">
-        <h2 data-i18n="b3_title">Бесплатные консультации по аренде</h2>
-        <p data-i18n="b3_text">
-          Постоянные клиенты получают бесплатные юридические консультации по вопросам найма жилья.
-        </p>
+        <div class="card-inner">
+          <h2 data-i18n="b3_title">Бесплатные консультации по аренде</h2>
+          <p data-i18n="b3_text">
+            Постоянные клиенты получают бесплатные юридические консультации по вопросам найма жилья.
+          </p>
+        </div>
         <a class="btn" id="cta3" href="#contact" data-i18n="ask">Задать вопрос</a>
       </article>
     </section>
@@ -148,8 +154,7 @@
         b2_text: "Срок до 30 дней. Сумма от 50 000 до 100 000 ₸. Доступно нашим постоянным клиентам по правилам сервиса.",
         b3_title: "Бесплатные консультации по аренде",
         b3_text: "Постоянные клиенты получают бесплатные юридические консультации по вопросам найма жилья.",
-
-        wa_msg: "Здравствуйте, хочу поговорить о договоре аренды.",
+        wa_msg: "Здравствуйте, хочу поговорить о договоре аренды."
       },
       kk: {
         brand: "Пәтерді жалдау шарты",
@@ -174,12 +179,10 @@
         b2_text: "30 күнге дейін. 50 000–100 000 ₸. Қызмет ережелері бойынша тұрақты клиенттерге қолжетімді.",
         b3_title: "Жалдау бойынша тегін кеңестер",
         b3_text: "Тұрақты клиенттеріміз жалдау мәселелері бойынша тегін заңгерлік кеңес алады.",
-
-        wa_msg: "Сәлеметсіз бе, жалдау шарты туралы сөйлескім келеді.",
+        wa_msg: "Сәлеметсіз бе, жалдау шарты туралы сөйлескім келеді."
       }
     };
 
-    // Элементы для перевода
     const i18nEls = document.querySelectorAll("[data-i18n]");
     const langBtns = document.querySelectorAll(".lang-btn");
     const waBtn = document.getElementById("waBtn");
@@ -187,37 +190,19 @@
 
     function setLang(lang) {
       document.documentElement.lang = lang === "kk" ? "kk" : "ru";
-
       i18nEls.forEach(el => {
         const key = el.getAttribute("data-i18n");
         if (dict[lang][key]) el.textContent = dict[lang][key];
       });
-
-      // Обновляем предзаполненный текст WhatsApp (и в шапке, и внизу — ОДИНАКОВЫЙ текст)
       const msg = encodeURIComponent(dict[lang].wa_msg);
       const href = `https://api.whatsapp.com/send?phone=77081940179&text=${msg}`;
       waBtn.setAttribute("href", href);
       waTextLink.setAttribute("href", href);
-
-      // Обновляем aria-pressed на кнопках языка
       langBtns.forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
     }
 
-    // Слушатели переключателя языка
-    langBtns.forEach(btn => {
-      btn.addEventListener("click", () => setLang(btn.dataset.lang));
-    });
-
-    // Язык по умолчанию
+    langBtns.forEach(btn => btn.addEventListener("click", () => setLang(btn.dataset.lang)));
     setLang("ru");
-
-    // Плавный переход к статьям по клику на заголовок (если потребуется)
-    const articlesTitle = document.querySelector('#articles h2');
-    if (articlesTitle) {
-      articlesTitle.addEventListener('click', () => {
-        document.getElementById('articles').scrollIntoView({ behavior: 'smooth' });
-      });
-    }
   </script>
 </body>
 </html>
