@@ -1,57 +1,46 @@
-/* ===== БАЗА ===== */
 html, body {
   margin:0;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+  font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;
   background:#0b0f12;
   color:#e9edf3;
 }
+.wrap{max-width:1100px;margin:0 auto;padding:24px}
 a{color:#8ab4ff;text-decoration:none}
 a:hover{opacity:.92}
-.wrap{max-width:1100px;margin:0 auto;padding:24px}
 
-/* ===== ХЕДЕР ===== */
-.topbar{display:flex;align-items:center;justify-content:space-between}
+/* header */
+.topbar{display:flex;justify-content:space-between;align-items:center}
 .logo{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#38BDF8,#8B5CF6)}
 .langs{display:flex;gap:8px}
 .lang-btn{background:#0f1221;color:#fff;padding:8px 12px;border-radius:10px}
 .lang-btn.active{background:#38BDF8;color:#041018}
 
-/* ===== HERO ===== */
+/* hero */
 .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:stretch;padding:28px 0}
 .hero-card{background:#151935;border-radius:16px;padding:28px}
-.title{font-size:36px;color:#fff}
-.lead{color:#DCE3FF;font-size:16px;margin-bottom:18px}
-.cta{display:flex;flex-wrap:wrap;gap:12px}
-.btn{padding:14px 18px;border-radius:12px;font-weight:700}
+.title{font-size:32px;color:#fff}
+.lead{color:#DCE3FF;margin-bottom:18px}
+.cta{display:flex;gap:12px}
+.btn{padding:12px 18px;border-radius:12px;font-weight:700}
 .btn-primary{background:#22C55E;color:#062012}
 .btn-outline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.2)}
-.mini{font-size:12px;color:#B8C1FF;margin-top:8px}
 .hero-media img{width:100%;border-radius:16px}
 
-/* ===== КАРТОЧКИ ===== */
-.grid{display:grid;gap:16px}
-.three{grid-template-columns:repeat(3,1fr)}
-.card{background:#151935;border-radius:16px;padding:20px}
+/* баннеры */
+.banner{padding:20px 0}
+.card{background:#151935;border-radius:16px;padding:20px;margin-bottom:16px}
 .card h3{margin:0 0 8px;color:#fff}
 
-/* ===== ФУТЕР ===== */
+/* footer */
 footer{padding:28px 0;color:#B8C1FF;text-align:center}
 
-/* ===== СТАТЬИ — белые ===== */
-#articles, #articles article, .articles, .posts, .post, article {
+/* статьи — белые */
+#articles, #articles article {
   background:#ffffff !important;
   color:#0f172a !important;
   padding:24px;
-  margin-bottom:16px;
   border-radius:12px;
+  margin-bottom:16px;
 }
-#articles h1,#articles h2,#articles h3,
-.articles h1,.articles h2,.articles h3,
-.posts h1,.posts h2,.posts h3,
-.post h1,.post h2,.post h3,
-article h1,article h2,article h3 {
-  color:#0f172a !important;
-}
-#articles a,.articles a,.posts a,.post a,article a {
-  color:#1d4ed8 !important;
-}
+#articles h2 {color:#0f172a !important;}
+#articles a {color:#1d4ed8 !important;}
