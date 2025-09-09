@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ПОДГОТОВИМ ДОГОВОР АРЕНДЫ КВАРТИРЫ. БЫСТРО. НЕДОРОГО. ГРАМОТНО | RU / KZ</title>
+  <title>Договор аренды квартиры | RU / KZ</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -31,34 +31,32 @@
     </div>
   </header>
 
-  <!-- ГЕРОЙ-СЕТКА -->
+  <!-- ГЕРОЙ-СЕТКА: попарно баннер + фото -->
   <main class="hero-grid">
     <!-- Пара 1 -->
     <article class="card accent">
       <div class="card-inner">
-        <h2 data-i18n="b1_title">Опытные юристы подготовят договор аренды квартиры с учетом ваших условий и требований</h2>
+        <h2 data-i18n="b1_title">Подготовка договора аренды квартиры</h2>
         <p data-i18n="b1_text">
-          За 3 часа. Цена 10 000 тенге. Договор аренды для собственников квартир: быстро, грамотно, с учетом законодательства Республики Казахстан.
+          Готовим договоры для собственников арендных квартир: быстро, понятно и по закону Казахстана. Документ в .docx + комментарии.
         </p>
         <ul class="ticks">
-          <li data-i18n="b1_li1">Делаете заказ</li>
-          <li data-i18n="b1_li2">Готовим проект договора аренды квартиры и предоставляем предварительный проект</li>
-          <li data-i18n="b1_li3">Предоставляем финальный вариант договора аренды квартиры</li>
+          <li data-i18n="b1_li1">Проверка данных сторон и объекта</li>
+          <li data-i18n="b1_li2">Условия оплаты, залога и ответственности</li>
+          <li data-i18n="b1_li3">Права, обязанности, досрочное расторжение</li>
         </ul>
       </div>
-      <a class="btn large" id="cta1" href="#contact" data-i18n="get_consult">Получить консультацию</a>
     </article>
     <img class="hero-img" src="images/slide5.png" alt="Иллюстрация по договору аренды" />
 
     <!-- Пара 2 -->
     <article class="card">
       <div class="card-inner">
-        <h2 data-i18n="b2_title">Беспроцентные краткосрочные ссуды для наших постоянных клиентов</h2>
+        <h2 data-i18n="b2_title">Беспроцентные займы для постоянных клиентов</h2>
         <p data-i18n="b2_text">
-          Срок до 30 дней. Сумма 50 000 тенге. Нашим постоянным клиентам.
+          Срок до 30 дней. Сумма от 50 000 до 100 000 ₸. Доступно нашим постоянным клиентам по правилам сервиса.
         </p>
       </div>
-      <a class="btn" id="cta2" href="#contact" data-i18n="details">Узнать условия</a>
     </article>
     <img class="hero-img" src="images/money.png" alt="Иконка денег" />
 
@@ -67,28 +65,42 @@
       <div class="card-inner">
         <h2 data-i18n="b3_title">Бесплатные консультации по аренде</h2>
         <p data-i18n="b3_text">
-          Бесплатные юридические консультации по вопросам аренды квартир нашим постоянным клиентам.
+          Постоянные клиенты получают бесплатные юридические консультации по вопросам найма жилья.
         </p>
       </div>
-      <a class="btn" id="cta3" href="#contact" data-i18n="ask">Задать вопрос</a>
     </article>
     <img class="hero-img" src="images/articles-cover.png" alt="Обложка раздела статей" />
   </main>
 
-  <!-- Полезные статьи -->
+  <!-- Раздел со статьями -->
   <section id="articles" class="articles">
-    <h2 class="section-title">
-      <a class="section-link" href="articles/index.html">
-        Полезные для арендодателей статьи по аренде квартир
+    <div class="articles-head">
+      <h2 data-i18n="open_articles">Открыть статьи</h2>
+      <p class="muted" data-i18n="articles_note">
+        Две статьи будут размещены позднее. Ниже — ссылки-заглушки.
+      </p>
+    </div>
+
+    <div class="articles-grid">
+      <a class="article-card" href="articles/article-1.html">
+        <img src="articles/article-1.jpg" alt="Статья 1" />
+        <div class="article-meta">
+          <h3 data-i18n="a1_title">Статья 1 (заглушка)</h3>
+          <span class="link" data-i18n="read">Открыть</span>
+        </div>
       </a>
-    </h2>
-    <p class="muted">Перейдите на страницу со статьями, чтобы узнать больше.</p>
-    <div class="articles-cta">
-      <a class="btn large" href="articles/index.html">Перейти к статьям</a>
+
+      <a class="article-card" href="articles/article-2.html">
+        <img src="articles/article-2.jpg" alt="Статья 2" />
+        <div class="article-meta">
+          <h3 data-i18n="a2_title">Статья 2 (заглушка)</h3>
+          <span class="link" data-i18n="read">Открыть</span>
+        </div>
+      </a>
     </div>
   </section>
 
-  <!-- Контакты -->
+  <!-- Контакты (якорь) -->
   <section id="contact" class="contact">
     <h2 data-i18n="contact_us">Связаться</h2>
     <p class="phone">
@@ -106,7 +118,77 @@
   </footer>
 
   <script>
+    // Текущий год
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // I18N словарь
+    const dict = {
+      ru: {
+        brand: "Договор аренды квартиры",
+        call: "Позвонить",
+        whatsapp: "WhatsApp",
+        open_articles: "Открыть статьи",
+        articles_note: "Две статьи будут размещены позднее. Ниже — ссылки-заглушки.",
+        a1_title: "Статья 1 (заглушка)",
+        a2_title: "Статья 2 (заглушка)",
+        read: "Открыть",
+        contact_us: "Связаться",
+        phone_label: "Телефон / WhatsApp:",
+        b1_title: "Подготовка договора аренды квартиры",
+        b1_text: "Готовим договоры для собственников арендных квартир: быстро, понятно и по закону Казахстана. Документ в .docx + комментарии.",
+        b1_li1: "Проверка данных сторон и объекта",
+        b1_li2: "Условия оплаты, залога и ответственности",
+        b1_li3: "Права, обязанности, досрочное расторжение",
+        b2_title: "Беспроцентные займы для постоянных клиентов",
+        b2_text: "Срок до 30 дней. Сумма от 50 000 до 100 000 ₸. Доступно нашим постоянным клиентам по правилам сервиса.",
+        b3_title: "Бесплатные консультации по аренде",
+        b3_text: "Постоянные клиенты получают бесплатные юридические консультации по вопросам найма жилья.",
+        wa_msg: "Здравствуйте, хочу поговорить о договоре аренды."
+      },
+      kk: {
+        brand: "Пәтерді жалдау шарты",
+        call: "Қоңырау шалу",
+        whatsapp: "WhatsApp",
+        open_articles: "Мақалаларды ашу",
+        articles_note: "Екі мақала кейінірек орналастырылады. Төменде – уақытша сілтемелер.",
+        a1_title: "1-макала (уақытша)",
+        a2_title: "2-макала (уақытша)",
+        read: "Ашу",
+        contact_us: "Байланыс",
+        phone_label: "Телефон / WhatsApp:",
+        b1_title: "Пәтерді жалдау шартын дайындау",
+        b1_text: "Пәтер иелері үшін шарттарды жылдам әрі түсінікті, ҚР заңына сай әзірлейміз. .docx құжаты + түсіндірмелер.",
+        b1_li1: "Тараптар мен нысан деректерін тексеру",
+        b1_li2: "Төлем, кепіл және жауапкершілік шарттары",
+        b1_li3: "Құқықтар, міндеттер, мерзімінен бұрын бұзу",
+        b2_title: "Тұрақты клиенттерге пайызсыз қарыздар",
+        b2_text: "30 күнге дейін. 50 000–100 000 ₸. Қызмет ережелері бойынша тұрақты клиенттерге қолжетімді.",
+        b3_title: "Жалдау бойынша тегін кеңестер",
+        b3_text: "Тұрақты клиенттеріміз жалдау мәселелері бойынша тегін заңгерлік кеңес алады.",
+        wa_msg: "Сәлеметсіз бе, жалдау шарты туралы сөйлескім келеді."
+      }
+    };
+
+    const i18nEls = document.querySelectorAll("[data-i18n]");
+    const langBtns = document.querySelectorAll(".lang-btn");
+    const waBtn = document.getElementById("waBtn");
+    const waTextLink = document.getElementById("waTextLink");
+
+    function setLang(lang) {
+      document.documentElement.lang = lang === "kk" ? "kk" : "ru";
+      i18nEls.forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (dict[lang][key]) el.textContent = dict[lang][key];
+      });
+      const msg = encodeURIComponent(dict[lang].wa_msg);
+      const href = `https://api.whatsapp.com/send?phone=77081940179&text=${msg}`;
+      waBtn.setAttribute("href", href);
+      waTextLink.setAttribute("href", href);
+      langBtns.forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+    }
+
+    langBtns.forEach(btn => btn.addEventListener("click", () => setLang(btn.dataset.lang)));
+    setLang("ru");
   </script>
 </body>
 </html>
