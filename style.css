@@ -1,14 +1,17 @@
 :root{
-  --bg: #0f172a;           /* slate-900 */
-  --panel: #111827;        /* gray-900 */
-  --card: #0b1220;         /* deep panel */
-  --accent: #1d4ed8;       /* blue-700 */
-  --accent-2: #2563eb;     /* blue-600 */
-  --text: #e5e7eb;         /* gray-200 */
-  --muted: #9ca3af;        /* gray-400 */
+  --bg: #0f172a;
+  --panel: #111827;
+  --card: #0b1220;
+  --accent: #1d4ed8;
+  --accent-2: #2563eb;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
   --ring: rgba(37, 99, 235, .35);
   --radius: 18px;
   --gap: 20px;
+
+  /* ЕДИНАЯ ВЫСОТА ДЛЯ БАННЕРОВ И ФОТО */
+  --banner-h: 300px;
 }
 
 *{ box-sizing: border-box; }
@@ -23,16 +26,10 @@ body{
 
 /* Header */
 .site-header{
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  display:flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  padding: 14px 20px;
-  background: rgba(6, 16, 30, 0.7);
-  backdrop-filter: blur(8px);
+  position: sticky; top: 0; z-index: 10;
+  display:flex; justify-content: space-between; align-items:center;
+  gap: 16px; padding: 14px 20px;
+  background: rgba(6, 16, 30, 0.7); backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 .brand{ display:flex; align-items:center; gap:10px; }
@@ -41,7 +38,8 @@ body{
 
 .actions{ display:flex; align-items:center; gap:12px; }
 .lang-switch{
-  display:inline-flex; gap:6px; padding:4px; background:#0a1324; border-radius: 999px; border:1px solid rgba(255,255,255,.06);
+  display:inline-flex; gap:6px; padding:4px; background:#0a1324;
+  border-radius: 999px; border:1px solid rgba(255,255,255,.06);
 }
 .lang-btn{
   appearance:none; border:0; padding:8px 12px; border-radius: 999px;
@@ -72,24 +70,30 @@ body{
   gap: var(--gap);
   padding: 28px 20px 8px;
   max-width: 1180px; margin: 0 auto;
+  align-items: start;
 }
 
 /* Banners (left) */
-.banners{ display:flex; flex-direction: column; gap: var(--gap); }
+.banners{
+  display:flex; flex-direction: column; gap: var(--gap);
+}
 .card{
   background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
   border: 1px solid rgba(255,255,255,.06);
   border-radius: var(--radius);
-  padding: 20px 20px 18px;
+  padding: 16px 18px;
   box-shadow: 0 8px 28px rgba(0,0,0,.25);
+  display:flex; flex-direction: column; justify-content: space-between;
+  min-height: var(--banner-h);   /* одинаковая высота баннеров */
 }
-.card h2{ margin:0 0 8px; font-size: 22px; letter-spacing: .2px; }
-.card p{ margin: 0 0 12px; color: var(--text); }
+.card-inner{ display:flex; flex-direction: column; gap: 10px; }
+.card h2{ margin:0; font-size: 22px; letter-spacing: .2px; }
+.card p{ margin: 0; color: var(--text); }
 .card.accent{
   border-color: rgba(37,99,235,.35);
   background: linear-gradient(180deg, rgba(29,78,216,.18), rgba(29,78,216,.06));
 }
-.ticks{ margin: 0 0 14px 0; padding: 0; list-style: none; }
+.ticks{ margin: 0; padding: 0; list-style: none; }
 .ticks li{
   position: relative; padding-left: 22px; margin: 6px 0; color: var(--text);
 }
@@ -104,12 +108,12 @@ body{
   display:flex; flex-direction: column; gap: var(--gap);
 }
 .side-images img{
-  width:100%; height: auto; display:block;
+  width:100%;
+  height: var(--banner-h);   /* одинаковая высота с баннерами */
+  object-fit: cover;
   border-radius: var(--radius);
   border: 1px solid rgba(255,255,255,.06);
   box-shadow: 0 8px 28px rgba(0,0,0,.28);
-  object-fit: cover;
-  aspect-ratio: 16/10;
 }
 
 /* Articles */
@@ -162,4 +166,9 @@ body{
   .hero-grid{ grid-template-columns: 1fr; }
   .side-images{ order: -1; }
   .articles-grid{ grid-template-columns: 1fr; }
+  :root{ --banner-h: 240px; } /* немного ниже на мобильных */
+}
+
+@media (min-width: 1400px){
+  :root{ --banner-h: 340px; } /* чуть больше на очень широких */
 }
