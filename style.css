@@ -13,7 +13,6 @@ root{
   /* ЕДИНАЯ ВЫСОТА ДЛЯ БАННЕРОВ И ФОТО */
   --banner-h: 300px;
 
-  /* ширина и отступы страницы */
   --page-w: 1180px;
   --page-pad: 20px;
 }
@@ -32,11 +31,10 @@ body{
 .site-header{
   position: sticky; top: 0; z-index: 10;
   display:flex; justify-content: space-between;
-  align-items: flex-start;              /* верх заголовка = верх баннеров */
-  min-height: var(--banner-h);          /* низ шапки = линия старта первого фото */
+  align-items: flex-start;              /* верх иконки = верх баннеров */
   padding: 14px
            calc( max((100vw - var(--page-w))/2, 0px) + var(--page-pad) )
-           0;                           /* те же отступы, что у .hero-grid */
+           0;                           /* синхронизация с .hero-grid */
   background: rgba(6,16,30,0.7); backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
@@ -44,7 +42,7 @@ body{
 .logo{ font-size: 22px; }
 .brand-title{ font-weight: 700; letter-spacing: .2px; }
 
-.actions{ display:flex; gap:12px; align-items: flex-end; }
+.actions{ display:flex; gap:12px; align-self: flex-end; }
 .lang-switch{
   display:inline-flex; gap:6px; padding:4px; background:#0a1324;
   border-radius: 999px; border:1px solid rgba(255,255,255,.06);
