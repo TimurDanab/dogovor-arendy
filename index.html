@@ -3,7 +3,49 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Договор аренды квартиры | RU / KZ</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Договор аренды квартиры, который защищает арендодателя. Быстрое составление за 3 часа и 5 000 ₸. Бесплатные консультации постоянным клиентам. RU/KZ." />
+  <meta name="robots" content="index,follow" />
+  <!-- Важно: замените на свой домен -->
+  <link rel="canonical" href="https://example.com/dogovor-arendy/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Договор аренды квартиры — защита арендодателя | RU/KZ" />
+  <meta property="og:description" content="Подготовим договор аренды, который защищает Ваши интересы. За 3 часа и 5 000 ₸. Бесплатные консультации постоянным клиентам." />
+  <!-- Важно: укажите абсолютный URL 1200×630 -->
+  <meta property="og:image" content="https://example.com/images/slide5.png" />
+  <meta property="og:url" content="https://example.com/dogovor-arendy/" />
+  <meta property="og:site_name" content="Юрист на час!" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:locale:alternate" content="kk_KZ" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Договор аренды квартиры — защита арендодателя | RU/KZ" />
+  <meta name="twitter:description" content="Договор аренды за 3 часа и 5 000 ₸. Бесплатные консультации постоянным клиентам." />
+  <!-- Тоже должен быть абсолютный URL -->
+  <meta name="twitter:image" content="https://example.com/images/slide5.png" />
+
+  <!-- JSON-LD: LegalService / LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "Юрист на час!",
+    "description": "Подготовка и проверка договоров аренды квартир. Бесплатные консультации постоянным клиентам. RU/KZ.",
+    "areaServed": "KZ",
+    "telephone": "+7 708 194 0179",
+    "url": "https://example.com/dogovor-arendy/",
+    "sameAs": [
+      "https://api.whatsapp.com/send?phone=77081940179"
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -16,17 +58,22 @@
 
     <div class="actions">
       <!-- Переключатель языка -->
-      <div class="lang-switch">
-        <button class="lang-btn" data-lang="ru" aria-pressed="true">RU</button>
-        <button class="lang-btn" data-lang="kk" aria-pressed="false">KZ</button>
+      <div class="lang-switch" role="group" aria-label="Переключение языка">
+        <button class="lang-btn" data-lang="ru" aria-pressed="true" type="button">RU</button>
+        <button class="lang-btn" data-lang="kk" aria-pressed="false" type="button">KZ</button>
       </div>
 
       <!-- Контакты -->
       <nav class="contacts">
         <a class="btn" id="callBtn" href="tel:+77081940179" data-i18n="call">Позвонить</a>
-        <a class="btn outline" id="waBtn"
-           href="https://api.whatsapp.com/send?phone=77081940179&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B8%D1%82%D1%8C%20%D0%BE%20%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B5%20%D0%B0%D1%80%D0%B5%D0%BD%D0%B4%D1%8B."
-           target="_blank" rel="noopener" data-i18n="whatsapp">WhatsApp</a>
+        <a
+          class="btn outline"
+          id="waBtn"
+          href="https://api.whatsapp.com/send?phone=77081940179&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D1%8F%20%D1%81%D0%B4%D0%B0%D1%8E%20%D0%BA%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80%D1%83%20%D0%B2%20%D0%B0%D1%80%D0%B5%D0%BD%D0%B4%D1%83%20%D0%B8%20%D0%BC%D0%BD%D0%B5%20%D0%BD%D1%83%D0%B6%D0%B5%D0%BD%20%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%B0%D1%80%D0%B5%D0%BD%D0%B4%D1%8B%20%D0%BA%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80%D1%8B."
+          target="_blank"
+          rel="noopener noreferrer"
+          data-i18n="whatsapp"
+        >WhatsApp</a>
       </nav>
     </div>
   </header>
@@ -37,48 +84,35 @@
     <article class="card accent">
       <div class="card-inner">
         <h2 data-i18n="b1_title">Договор аренды должен защищать вашу квартиру!</h2>
-        <p data-i18n="b1_text">
-          Сдаёте квартиру? Тогда Вы наверняка уже сталкивались с такими проблемами:.
-        </p>
+        <p data-i18n="b1_text">Сдаёте квартиру? Тогда Вы наверняка уже сталкивались с такими проблемами:</p>
         <ul class="ticks">
           <li data-i18n="b1_li1">арендаторы не платят вовремя?</li>
           <li data-i18n="b1_li2">оставляют долги за коммуналку?</li>
           <li data-i18n="b1_li3">уезжают, оставив грязную квартиру?</li>
-                </ul>
-        <p data-i18n="b1_extra_title">Типовые договоры защищают и арендаторов и арендодателей. Но кто рискует больше? Собственник квартиры или арендатор? За 3 часа и 5 000 тенге наши юристы подготовят договор аренды квартиры, который защищает ваши интересы.</p>
-        <ul>
         </ul>
+        <p data-i18n="b1_extra_title">
+          Типовые договоры защищают и арендаторов и арендодателей. Но кто рискует больше? Собственник квартиры или арендатор? За 3 часа и 5 000 тенге наши юристы подготовят договор аренды квартиры, который защищает ваши интересы.
+        </p>
       </div>
     </article>
-    <img class="hero-img" src="images/slide5.png" alt="Иллюстрация по договору аренды" />
+    <img class="hero-img" src="images/slide5.png" alt="Иллюстрация по договору аренды" loading="lazy" />
 
     <!-- Пара 2 -->
     <article class="card">
       <div class="card-inner">
         <h2 data-i18n="b2_title">Беспроцентные займы для сдающих квартиры</h2>
-    <p data-i18n="b2_text_intro">
-      Аренда квартиры часто связана с неожиданными расходами.
-    </p>
-
-    <ul class="ticks">
-      <li data-i18n="b2_li1">Коммунальные долги?</li>
-      <li data-i18n="b2_li2">Сломанная техника?</li>
-      <li data-i18n="b2_li3">Срочный ремонт?</li>
-    </ul>
-
-    <p data-i18n="b2_text_solution_title">
-      Выгодное решение для наших постоянных клиентов:
-    </p>
-    <p><strong data-i18n="b2_text_solution">
-      беспроцентные займы 50 000 ₸ сроком до 30 дней.
-    </strong></p>
-
-    <p data-i18n="b2_text_outro">
-      Быстро, удобно, без процентов и штрафов!
-    </p>
-    </div>
+        <p data-i18n="b2_text_intro">Аренда квартиры часто связана с неожиданными расходами.</p>
+        <ul class="ticks">
+          <li data-i18n="b2_li1">Коммунальные долги?</li>
+          <li data-i18n="b2_li2">Сломанная техника?</li>
+          <li data-i18n="b2_li3">Срочный ремонт?</li>
+        </ul>
+        <p data-i18n="b2_text_solution_title">Выгодное решение для наших постоянных клиентов:</p>
+        <p><strong data-i18n="b2_text_solution">беспроцентные займы 50 000 ₸ сроком до 30 дней.</strong></p>
+        <p data-i18n="b2_text_outro">Быстро, удобно, без процентов и штрафов!</p>
+      </div>
     </article>
-    <img class="hero-img" src="images/money.png" alt="Иконка денег" />
+    <img class="hero-img" src="images/money.png" alt="Иконка денег" loading="lazy" />
 
     <!-- Пара 3 -->
     <article class="card">
@@ -86,31 +120,29 @@
         <h2 data-i18n="b3_title">Ваш личный юрист по аренде — бесплатно</h2>
         <p data-i18n="b3_lead">Сдаёте квартиру и не знаете, как правильно поступить?</p>
         <ul class="ticks">
-        <li data-i18n="b3_li1">Арендаторы задерживают оплату?</li>
-        <li data-i18n="b3_li2">Оставляют долги или нарушают договор?</li>
-        <li data-i18n="b3_li3">Не знаете, как правильно защитить свои права?</li>
+          <li data-i18n="b3_li1">Арендаторы задерживают оплату?</li>
+          <li data-i18n="b3_li2">Оставляют долги или нарушают договор?</li>
+          <li data-i18n="b3_li3">Не знаете, как правильно защитить свои права?</li>
         </ul>
         <p>
-        <span data-i18n="b3_note1">Для постоянных клиентов — бесплатные консультации юриста.</span><br>
-        <strong data-i18n="b3_note2">Ваша квартира под надёжной защитой.</strong>
+          <span data-i18n="b3_note1">Для постоянных клиентов — бесплатные консультации юриста.</span><br />
+          <strong data-i18n="b3_note2">Ваша квартира под надёжной защитой.</strong>
         </p>
-        </div>
-        </article>
-      <img class="hero-img" src="images/articles-cover.png" alt="Обложка раздела статей" />
+      </div>
+    </article>
+    <img class="hero-img" src="images/articles-cover.png" alt="Обложка раздела статей" loading="lazy" />
   </main>
 
   <!-- Раздел со статьями -->
   <section id="articles" class="articles">
     <div class="articles-head">
       <h2 data-i18n="open_articles">Открыть статьи</h2>
-      <p class="muted" data-i18n="articles_note">
-        Две статьи будут размещены позднее. Ниже — ссылки-заглушки.
-      </p>
+      <p class="muted" data-i18n="articles_note">Две статьи будут размещены позднее. Ниже — ссылки-заглушки.</p>
     </div>
 
     <div class="articles-grid">
       <a class="article-card" href="articles/article-1.html">
-        <img src="articles/article-1.jpg" alt="Статья 1" />
+        <img src="articles/article-1.jpg" alt="Статья 1" loading="lazy" />
         <div class="article-meta">
           <h3 data-i18n="a1_title">Статья 1 (заглушка)</h3>
           <span class="link" data-i18n="read">Открыть</span>
@@ -118,7 +150,7 @@
       </a>
 
       <a class="article-card" href="articles/article-2.html">
-        <img src="articles/article-2.jpg" alt="Статья 2" />
+        <img src="articles/article-2.jpg" alt="Статья 2" loading="lazy" />
         <div class="article-meta">
           <h3 data-i18n="a2_title">Статья 2 (заглушка)</h3>
           <span class="link" data-i18n="read">Открыть</span>
@@ -134,9 +166,12 @@
       <strong data-i18n="phone_label">Телефон / WhatsApp:</strong>
       <a href="tel:+77081940179">+7 708 194 0179</a>
       &nbsp;|&nbsp;
-      <a id="waTextLink"
-         href="https://api.whatsapp.com/send?phone=77081940179&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B8%D1%82%D1%8C%20%D0%BE%20%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B5%20%D0%B0%D1%80%D0%B5%D0%BD%D0%B4%D1%8B."
-         target="_blank" rel="noopener">WhatsApp</a>
+      <a
+        id="waTextLink"
+        href="https://api.whatsapp.com/send?phone=77081940179&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D1%8F%20%D1%81%D0%B4%D0%B0%D1%8E%20%D0%BA%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80%D1%83%20%D0%B2%20%D0%B0%D1%80%D0%B5%D0%BD%D0%B4%D1%83%20%D0%B8%20%D0%BC%D0%BD%D0%B5%20%D0%BD%D1%83%D0%B6%D0%B5%D0%BD%20%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%B0%D1%80%D0%B5%D0%BD%D0%B4%D1%8B%20%D0%BA%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80%D1%8B."
+        target="_blank"
+        rel="noopener noreferrer"
+      >WhatsApp</a>
     </p>
   </section>
 
@@ -175,7 +210,6 @@
         b2_text_solution_title: "Выгодное решение для наших постоянных клиентов:",
         b2_text_solution: "беспроцентные займы 50 000 ₸ сроком до 30 дней.",
         b2_text_outro: "Быстро, удобно, без процентов и штрафов!",
-        /* ... */
         b3_title: "Ваш личный юрист по аренде — бесплатно",
         b3_lead: "Сдаёте квартиру и не знаете, как правильно поступить?",
         b3_li1: "Арендаторы задерживают оплату?",
@@ -210,7 +244,6 @@
         b2_text_solution_title: "Біздің тұрақты клиенттеріміз үшін тиімді шешім:",
         b2_text_solution: "50 000 ₸ дейінгі пайызсыз қарыздар, мерзімі 30 күнге дейін.",
         b2_text_outro: "Жылдам, ыңғайлы, пайызсыз және айыппұлсыз!",
-        /* ... */
         b3_title: "Жалдау бойынша сіздің жеке заңгеріңіз — тегін",
         b3_lead: "Пәтерді жалға беріп жүрсіз бе және қалай дұрыс әрекет ету керегін білмей тұрсыз ба?",
         b3_li1: "Жалға алушылар төлемді кешіктіреді ме?",
@@ -235,8 +268,8 @@
       });
       const msg = encodeURIComponent(dict[lang].wa_msg);
       const href = `https://api.whatsapp.com/send?phone=77081940179&text=${msg}`;
-      waBtn.setAttribute("href", href);
-      waTextLink.setAttribute("href", href);
+      if (waBtn) waBtn.setAttribute("href", href);
+      if (waTextLink) waTextLink.setAttribute("href", href);
       langBtns.forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
     }
 
