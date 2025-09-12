@@ -114,7 +114,9 @@ body{
 /* Footer */
 .site-footer{
   border-top:1px solid rgba(255,255,255,.06);
-  padding: 16px 20px 22px; text-align: center; color: var(--muted);
+  padding: 16px 20px 22px;
+  text-align: center;
+  color: var(--muted);
 }
 
 /* Responsive */
@@ -122,4 +124,13 @@ body{
   .hero-grid{ grid-template-columns: 1fr; }
   :root{ --banner-h: 240px; }
 }
-@media (min-width: 1400px){ :root{ --banner-h: 340px; } }
+
+@media (min-width: 1400px){
+  :root{ --banner-h: 340px; }
+}
+
+/* RU/KZ: привести последний абзац к стилю текста выше */
+p[data-i18n="b1_extra_title"] {
+  font: inherit;   /* включает font-family, font-size, font-weight, line-height и т.д. */
+  color: inherit;
+}
