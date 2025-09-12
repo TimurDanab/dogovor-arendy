@@ -137,8 +137,9 @@ p[data-i18n="b1_extra_title"] {
   font-weight: 400 !important;
   color: var(--text) !important;
 }
-/* Последний абзац подгоняем под стиль списка */
-p[data-i18n="b1_extra_title"] {
+/* Абзац сразу после списка .ticks — как у списка */
+.ticks + p,
+.card .ticks + p {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif !important;
   font-size: 16px !important;
   line-height: 1.55 !important;
