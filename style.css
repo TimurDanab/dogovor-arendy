@@ -134,3 +134,11 @@ p[data-i18n="b1_extra_title"] {
   font: inherit;   /* включает font-family, font-size, font-weight, line-height и т.д. */
   color: inherit;
 }
+/* Последний абзац подгоняем под стиль списка */
+p[data-i18n="b1_extra_title"] {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif !important;
+  font-size: 16px !important;
+  line-height: 1.55 !important;
+  font-weight: 400 !important;
+  color: var(--text) !important;
+}
